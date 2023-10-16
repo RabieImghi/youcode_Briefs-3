@@ -22,13 +22,26 @@
                 <li><a href="#">Create account</a></li>
                 <li><img src="images/moroco.png" class="moroco" alt="moroco"></li>
                 <li>MAR</li>
-                <li><a href="panier.html"><img src="images/store.png" class="store" alt="store"></a></li>
-                <li>5</li>
+                <li><img src="images/store.png" class="store" alt="store" onclick="panieCart()">
+                    <div id="cart-panie">
+                        <h4  style="margin: 15px; text-align: center;">Lists Produits </h4> <hr style="width: 100%; margin: 10px 0;">
+                        <div id="produitsCard">
+
+                        </div>
+                        <div class="produits" style="display: flex; justify-content: space-between; margin: 20px 10px;">
+                            <h4>Total : </h4>
+                            <h4 id="prixTotal">0 $</h4>
+                        </div>
+                        <div class="detail-panie" style="text-align: right; margin-top: 20px;">
+                            <a href="panier.html" style="background: yellow; padding: 10px; border-radius: 8px;">Detail panie</a>
+                        </div>
+                    </div>
+                </li>
+                <li id="produitCount">0</li>
             </ul>
         </nav>
-            
     </header>
-    <hr>
+        <hr>
     <main>
         <section id="Home_vue">
             <input type="checkbox" class="checkbox" style="position: relative; width: 10px; top: 20px; left: 10px; opacity: 0;">
@@ -70,7 +83,7 @@
                     </div>
                     <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
                          <span class="sold">120 Sold</span> 
-                        <a href="#"><img class="add_cart" src="images/hous.png" alt="hous"> </a>
+                        <img class="add_cart" src="images/hous.png" onclick="addPanie()" alt="hous">
                     </div>
                    
                     </div>

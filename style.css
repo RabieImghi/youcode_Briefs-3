@@ -768,6 +768,21 @@ border-radius: 6px;
     top: 50%;
     left: 95%;
 }
+#cart-panie{
+    position: absolute;
+    width: 500px;
+    background-color: white;
+    right: 50px;
+    box-shadow: 2px 2px 10px lightgray ;
+    margin-top: 20px;
+    padding: 10px 20px 30px 20px;
+    border-radius: 8px;
+    display: none;
+}
+#produitsCard{
+    overflow-y: scroll;
+    max-height: 40vh;
+}
 /*Responsive code*/
 @media only screen and (max-width: 600px){
     header #search{
@@ -782,6 +797,18 @@ border-radius: 6px;
     }
     #Home_vue .image_ads{
         margin: 20px 0;
+    }
+    .btnNextPrev{
+        width: 30px;
+        height: 30px;
+    }
+    #next{
+        bottom: 44.5%;
+        left: 5%;
+    }
+    #previews{
+        top: 44%;
+        left: 87%;
     }
     h2{
         font-size: 24px;
