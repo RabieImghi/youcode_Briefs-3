@@ -784,9 +784,9 @@ border-radius: 6px;
     max-height: 40vh;
 }
 /*Responsive code*/
-@media only screen and (max-width: 600px){
+@media only screen and (min-width: 300px ){
     header #search{
-        width: 180px;
+        width: 70%;
         height: 40px;
     }
     #Home_vue nav ul li{
@@ -958,5 +958,24 @@ border-radius: 6px;
     }
     .Border_Separe{
         border: none;
+    }
+}
+@media screen and (min-width: 500px){
+    #Best_Remise{
+        grid-template-columns: 50% 50%;
+    }
+}
+@media screen and (min-width: 680px and min-width: 680px){
+    #Home_vue{
+        grid-template-columns: 100%;
+    }
+    .hidden-nav ul li{
+        height: 15px;
+    }
+    header .navigation_info, #search{
+        display: none;
+    }
+    #Best_Remise{
+        grid-template-columns: 34% 34% 34%;
     }
 }
