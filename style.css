@@ -63,9 +63,6 @@ header .navigation_info ul li a{
     display: grid;
     grid-template-columns: 30% 70%;
 }
-#Home_vue nav{
-    margin-top: 40px;
-}
 #Home_vue nav img{
     width: 25px;
     color: #334155;
@@ -155,7 +152,7 @@ h2{
     font-size: 40px;
 }
 #Best_Remise .star{
-    width: 25%;
+    width: 30%;
     background-color: #FACC15;
     display: flex;
     align-items: center;
@@ -747,12 +744,12 @@ border-radius: 6px;
 .menu{
     display: none;
 }
-.labem, .checkbox{
+.labem{
     display: none;
 }
 .btnNextPrev{
     font-weight: bold;
-    position: relative;
+    position: absolute;
     width: 40px;
     height: 40px;
     background: rgba(255, 255, 255, 0.565);
@@ -761,12 +758,12 @@ border-radius: 6px;
     border: none;
 }
 #next{
-    bottom: 44.5%;
-    left: 5%;
+    top: 40%;
+    right: 5%;
 }
 #previews{
-    top: 50%;
-    left: 95%;
+    top: 40%;
+    margin-left: 10px;
 }
 #cart-panie{
     position: absolute;
@@ -783,12 +780,13 @@ border-radius: 6px;
     overflow-y: scroll;
     max-height: 40vh;
 }
-
 /*Responsive code*/
 @media screen and (max-width: 1280px){
+  
     header #search{
-       display: none;
+        width: 100%;
     }
+    
     #Home_vue nav {
         position: absolute;
         background-color: white;
@@ -939,7 +937,14 @@ border-radius: 6px;
     .hidden-nav{
         display: none;
     }
-  
+    #next{
+        top: 30%;
+        margin-left: 30px;
+    }
+    #previews{
+        top: 30%;
+        margin-left: -20px;
+    }
     .navigation_info{
         position: absolute;
         top: 80%;
@@ -965,17 +970,38 @@ border-radius: 6px;
         border: none;
         padding: 0;
     }
+    #Home_vue nav{
+        margin-top: 40px;
+    }
+    .labem{
+        display: flex; 
+        gap: 10px;
+        align-items: center; 
+        color: #334155; 
+        font-size: 20px; 
+        font-weight: bold;
+    }
 }
-
 @media screen and (min-width: 610px) and (max-width: 780px){
     #Best_Remise{
         grid-template-columns: 50% 50%;
+    }
+    #next{
+        top: 30%;
+        margin-left: 20px;
+    }
+    #previews{
+        top: 30%;
+        margin-left: 0px;
     }
 }
 @media screen and (min-width: 780px) and (max-width: 1280px){
     #Home_vue{
         grid-template-columns: 100%;
     }
+    .search_head{
+        display: none;
+    } 
     .hidden-nav ul li{
         height: 15px;
     }
@@ -987,5 +1013,20 @@ border-radius: 6px;
     #Best_Remise{
         grid-template-columns: 34% 34% 34%;
     }
+    #Best_Remise .star{
+       gap: 2px;
+       width: 35%;
+    }
+    #next{
+        top: 40%;
+        right: 0%;
+    }
+    #previews{
+        top: 40%;
+        margin-left: 10px;
+    }
+    
 }
-
+.hidden-navWeb{
+    display: block;
+}

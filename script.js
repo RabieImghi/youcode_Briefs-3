@@ -15,9 +15,14 @@ function sliderImagesHomePrev(){
 }
 function afichageAccesoire(){
     var cartActive = document.getElementById('accesoire_div');
-    if(cartActive.style.display === "none") 
-    cartActive.style.display="block";
-    else cartActive.style.display="none";
+    // if(cartActive.style.display === "none") 
+    // cartActive.style.display="block";
+    // else cartActive.style.display="none";
+
+    if(cartActive.className == "hidden-nav") 
+        cartActive.classList.add("hidden-nav","hidden-navWeb");
+    else if(cartActive.className == "hidden-nav hidden-navWeb") 
+    cartActive.classList.remove('hidden-navWeb');
 }
 function afichageMenu(){
     var menuMobile = document.getElementById('menuMobile');
