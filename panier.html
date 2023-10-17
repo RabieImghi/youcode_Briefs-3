@@ -11,18 +11,33 @@
     <header>
         <nav class="logo_search">
             <a href="index.html"><img src="images/logo.jpg" alt="logo"></a>
-            <input type="search" name="Search" id="search" placeholder="Keyboard">
+            <input type="search" name="Search" id="search" placeholder="Search">
         </nav>
-        <input type="checkbox" class="checkboxM menu" style="position: relative; width: 10px; top: 20px; left: 10px; opacity: 0;">
-        <img class="labemM menu" src="images/2099043.png" style="width: 30px;" alt=""> 
-        <nav class="navigation_info">
+        <img class="labemM menu" src="images/2099043.png" style="width: 30px;" alt="menu"  onclick="afichageMenu()">
+        <nav class="navigation_info" id="menuMobile">
             <ul>
                 <li class="Border_Separe"><a href="#">Sing In</a></li>
                 <li><a href="#">Create account</a></li>
                 <li><img src="images/moroco.png" class="moroco" alt="moroco"></li>
                 <li>MAR</li>
-                <li><a href="panier.html"><img src="images/store.png" class="store" alt="store"></a></li>
-                <li>5</li>
+                <li><img src="images/store.png" class="store" alt="store" onclick="panieCart()">
+                    <div id="cart-panie">
+                        <h4  style="margin: 15px; text-align: center;">Lists Produits </h4> <hr style="width: 100%; margin: 10px 0;">
+                        <div id="produitsCard">
+                            <div class='produits' style='text-align: center; margin:20px 10px;'>
+                                 <h4>There is no produit</h4> 
+                                </div>
+                        </div>
+                        <div class="produits" style="display: flex; justify-content: space-between; margin: 20px 10px;">
+                            <h4>Total : </h4>
+                            <h4 id="prixTotal">0 $</h4>
+                        </div>
+                        <div class="detail-panie" style="text-align: right; margin-top: 20px;">
+                            <a href="panier.html" style="background: yellow; padding: 10px; border-radius: 8px;">Detail panie</a>
+                        </div>
+                    </div>
+                </li>
+                <li id="produitCount">0</li>
             </ul>
         </nav>
     </header>
@@ -124,4 +139,5 @@
         </div>
     </footer>
 </body>
+<script src="script.js"></script>
 </html>

@@ -15,10 +15,6 @@ function sliderImagesHomePrev(){
 }
 function afichageAccesoire(){
     var cartActive = document.getElementById('accesoire_div');
-    // if(cartActive.style.display === "none") 
-    // cartActive.style.display="block";
-    // else cartActive.style.display="none";
-
     if(cartActive.className == "hidden-nav") 
         cartActive.classList.add("hidden-nav","hidden-navWeb");
     else if(cartActive.className == "hidden-nav hidden-navWeb") 
@@ -27,7 +23,7 @@ function afichageAccesoire(){
 function afichageMenu(){
     var menuMobile = document.getElementById('menuMobile');
     if(menuMobile.className == "navigation_info") 
-        menuMobile.classList.add("navigation_info","menuBlock");
+        menuMobile.classList.add("menuBlock");
     else if(menuMobile.className == "navigation_info menuBlock") 
     menuMobile.classList.remove('menuBlock');
 }
