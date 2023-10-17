@@ -2,6 +2,7 @@ let cont = 0;
 let countProduit=0;
 var tablImage=["images/women.png","images/women2.png","images/women3.png"];
 var image= document.getElementById("imageHomeSlide");
+
 function sliderImagesHomeNex(){
     if(cont<3) cont ++;
     if(cont==3) cont = 0;
@@ -20,9 +21,10 @@ function afichageAccesoire(){
 }
 function afichageMenu(){
     var menuMobile = document.getElementById('menuMobile');
-    if(menuMobile.style.display === "none") 
-    menuMobile.style.display="block";
-    else menuMobile.style.display="none";
+    if(menuMobile.className == "navigation_info") 
+        menuMobile.classList.add("navigation_info","menuBlock");
+    else if(menuMobile.className == "navigation_info menuBlock") 
+    menuMobile.classList.remove('menuBlock');
 }
 function panieCart(){
     var cartActive = document.getElementById('cart-panie');
@@ -42,4 +44,7 @@ function addPanie(){
     prixProduit.innerHTML= countProduit*1900+" $";
 
 } 
+function test(){
+    
+}
 // definition of done planing pooker

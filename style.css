@@ -783,8 +783,9 @@ border-radius: 6px;
     overflow-y: scroll;
     max-height: 40vh;
 }
+
 /*Responsive code*/
-@media screen and (min-width: 300px ) and (max-width: 1280px){
+@media screen and (max-width: 1280px){
     header #search{
        display: none;
     }
@@ -938,10 +939,7 @@ border-radius: 6px;
     .hidden-nav{
         display: none;
     }
-    .checkbox, .labem{
-        display: block;
-    }
-   
+  
     .navigation_info{
         position: absolute;
         top: 80%;
@@ -951,8 +949,11 @@ border-radius: 6px;
         box-shadow: 2px 2px 10px lightgray;
         border-radius: 10px;
         padding: 10px;
-        display: block;
+        display: none;
         z-index: 100;
+    }
+    .menuBlock{
+        display: block;
     }
     #menuMobile ul{
         display: grid;
@@ -987,3 +988,4 @@ border-radius: 6px;
         grid-template-columns: 34% 34% 34%;
     }
 }
+
