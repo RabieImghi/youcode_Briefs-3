@@ -12,6 +12,18 @@ function sliderImagesHomePrev(){
     if(cont<0) cont = 2;
     image.src = tablImage[cont];
 }
+function afichageAccesoire(){
+    var cartActive = document.getElementById('accesoire_div');
+    if(cartActive.style.display === "none") 
+    cartActive.style.display="block";
+    else cartActive.style.display="none";
+}
+function afichageMenu(){
+    var menuMobile = document.getElementById('menuMobile');
+    if(menuMobile.style.display === "none") 
+    menuMobile.style.display="block";
+    else menuMobile.style.display="none";
+}
 function panieCart(){
     var cartActive = document.getElementById('cart-panie');
     if(cartActive.style.display === "none") 
