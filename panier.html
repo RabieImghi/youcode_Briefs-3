@@ -13,14 +13,14 @@
             <a href="index.html"><img src="images/logo.jpg" alt="logo"></a>
             <input type="search" name="Search" id="search" placeholder="Search">
         </nav>
-        <img class="labemM menu" src="images/2099043.png" style="width: 30px;" alt="menu"  id="afichagMenu">
+        <img class="labemM menu" src="images/2099043.png" style="width: 30px;" alt="menu" id="afichagMenu">
         <nav class="navigation_info" id="menuMobile">
             <ul>
                 <li class="Border_Separe"><a href="#">Sing In</a></li>
                 <li><a href="#">Create account</a></li>
                 <li><img src="images/moroco.png" class="moroco" alt="moroco"></li>
                 <li>MAR</li>
-                <li><img src="images/store.png" class="store" alt="store"  id="afichagePanie" >
+                <li><img src="images/store.png" id="afichagePanie" class="store" alt="store">
                     <div id="cart-panie">
                         <h4  style="margin: 15px; text-align: center;">Lists Produits </h4> <hr style="width: 100%; margin: 10px 0;">
                         <div id="produitsCard">
@@ -67,8 +67,8 @@
                         </div>
                         <div class="add_cart_counyt">
                             <div class="moin">-</div>
-                            <span>1</span>
-                            <div class="moin plus">+</div>
+                            <span class="quantite">1</span>
+                            <div class="moin plus" onclick="plusPanie(0,1900)">+</div>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                             <span class="virify"></span>
                         </label> 
                         <img src="images/Clavie.png" alt="clavie">
-                        <span>Produit Name <br> <p>Produit </p> <h3>$ 1900</h3><span>Shipping : $15 </span> </span>
+                        <span>Produit Name <br> <p>Produit </p> <h3>$ 400</h3><span>Shipping : $15 </span> </span>
                     </div>
                     <div class="sup_plus">
                         <div class="h_d">
@@ -88,8 +88,8 @@
                         </div>
                         <div class="add_cart_counyt">
                             <div class="moin">-</div>
-                            <span>1</span>
-                            <div class="moin plus">+</div>
+                            <span class="quantite">1</span>
+                            <div class="moin plus"  onclick="plusPanie(1,400)">+</div>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                             <span class="virify"></span>
                         </label> 
                         <img src="images/Clavie.png" alt="clavie">
-                        <span>Produit Name <br> <p>Produit </p> <h3>$ 1900</h3><span>Shipping : $15 </span> </span>
+                        <span>Produit Name <br> <p>Produit </p> <h3>$ 1000</h3><span>Shipping : $15 </span> </span>
                     </div>
                     <div class="sup_plus">
                         <div class="h_d">
@@ -109,17 +109,17 @@
                         </div>
                         <div class="add_cart_counyt">
                             <div class="moin">-</div>
-                            <span>1</span>
-                            <div class="moin plus">+</div>
+                            <span class="quantite">1</span>
+                            <div class="moin plus"  onclick="plusPanie(2,1000)">+</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="product_payment" >
                 <h3>Summary</h3>
-                <span><div>Total Produit</div> <div>$ 1900</div></span>
+                <span><div>Total Produit</div> <div id="totalProduit">3200</div></span>
                 <span><div>Shipping</div> <div>$ 50</div></span>
-                <b><div>total</div><div>$ 2800</div></b>
+                <b><div>total</div><div id="totalPrixShipping">$ 3250</div></b>
                 <button>Checkout</button>
                 <h3>Paymant Mechode</h3>
                 <p class="PaymantMth">Paypal | creaditCard</p>

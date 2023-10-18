@@ -54,4 +54,18 @@ function addPanie(){
     }
     prixProduit.innerHTML= countProduit*1900+" $";
 } 
+function plusPanie(position,prix){
+    var totalProduit =document.getElementById("totalProduit");
+    var elements = document.querySelectorAll('.quantite');
+    var total = parseInt(totalProduit.textContent);
+    elements[position].innerHTML=Number(elements[position].textContent)+1;
+    for(var i=0;i<elements.length;i++){
+        if(i==position) total+=prix;
+    }
+    totalProduit.innerHTML = total;
+    var totalPrixShipping = document.getElementById("totalPrixShipping");
+    totalPrixShipping.innerHTML=total+50;
+    
+}
+
 // definition of done planing pooker
