@@ -26,13 +26,12 @@ previewsImage.addEventListener('click', function afichageMenu(){
     menuMobile.classList.remove('menuBlock');
 });
 // afichge panie
-var afichagePanie=document.getElementById("afichagePanie");
-afichagePanie.addEventListener('click', function panieCart(){
+function panieCart(){
     var cartActive = document.getElementById('cart-panie');
     if(cartActive.style.display === "none") 
     cartActive.style.display="block";
     else cartActive.style.display="none";
-});
+};
 // afichge Accesoire
 var afichageAccesoire=document.getElementById("afichageAccesoire");
 afichageAccesoire.addEventListener('click',function afichageAccesoire(){
