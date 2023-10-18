@@ -25,4 +25,12 @@ previewsImage.addEventListener('click', function afichageMenu(){
     else if(menuMobile.className == "navigation_info menuBlock") 
     menuMobile.classList.remove('menuBlock');
 });
+// afichge panie
+var afichagePanie=document.getElementById("afichagePanie");
+afichagePanie.addEventListener('click', function panieCart(){
+    var cartActive = document.getElementById('cart-panie');
+    if(cartActive.style.display === "none") 
+    cartActive.style.display="block";
+    else cartActive.style.display="none";
+});
 // definition of done planing pooker
