@@ -42,4 +42,16 @@ afichageAccesoire.addEventListener('click',function afichageAccesoire(){
     else if(cartActive.className == "hidden-nav hidden-navWeb") 
     cartActive.classList.remove('hidden-navWeb');
 });
+
+function addPanie(){
+    var produitCount= document.getElementById("produitCount");
+    var cartActive = document.getElementById('produitsCard');
+    var prixProduit = document.getElementById('prixTotal');
+    produitCount.innerHTML = ++countProduit;
+    cartActive.innerHTML="";
+    for(var i=0;i<countProduit;i++){
+        cartActive.innerHTML+= "<div class='produits' style='display: flex; justify-content: space-between; margin:20px 10px;'> <h4>Produit Name</h4>  <h4>1900 $</h4> </div>";
+    }
+    prixProduit.innerHTML= countProduit*1900+" $";
+} 
 // definition of done planing pooker
