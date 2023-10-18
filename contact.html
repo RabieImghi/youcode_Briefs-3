@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page d'accuelle ">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <nav class="logo_search">
+            <a href="index.html"><img src="images/logo.jpg" alt="logo"></a>
+            <input type="search" name="Search" id="search" placeholder="Search">
+        </nav>
+        <img class="labemM menu" src="images/2099043.png" style="width: 30px;" alt="menu"  onclick="afichageMenu()">
+        <nav class="navigation_info" id="menuMobile">
+            <ul>
+                <li class="Border_Separe"><a href="#">Sing In</a></li>
+                <li><a href="#">Create account</a></li>
+                <li><img src="images/moroco.png" class="moroco" alt="moroco"></li>
+                <li>MAR</li>
+                <li><img src="images/store.png" class="store" alt="store" onclick="panieCart()">
+                    <div id="cart-panie">
+                        <h4  style="margin: 15px; text-align: center;">Lists Produits </h4> <hr style="width: 100%; margin: 10px 0;">
+                        <div id="produitsCard">
+                            <div class='produits' style='text-align: center; margin:20px 10px;'>
+                                 <h4>There is no produit</h4> 
+                                </div>
+                        </div>
+                        <div class="produits" style="display: flex; justify-content: space-between; margin: 20px 10px;">
+                            <h4>Total : </h4>
+                            <h4 id="prixTotal">0 $</h4>
+                        </div>
+                        <div class="detail-panie" style="text-align: right; margin-top: 20px;">
+                            <a href="panier.html" style="background: yellow; padding: 10px; border-radius: 8px;">Detail panie</a>
+                        </div>
+                    </div>
+                </li>
+                <li id="produitCount">0</li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+       <section id="contact_page">
+            <div class="contact-desciption">
+                <h2>Contact our team <br>
+                    commercial</h2>
+                <span>Let's find out together how <br>
+                    Notion can help you.</span>
+                <img src="images/contact.png" alt="imageContact">
+            </div>
+            <div class="contact_formull">
+                <form>
+                    <label for="first_name">
+                        Firs Name <br>
+                        <input type="text" class="inputForm" name="first_name" placeholder="  Rabie">
+                    </label>    
+                    <label for="last_name">
+                        Last Name <br>
+                        <input type="text"class="inputForm" name="last_name" placeholder="  Ait Imghi">
+                    </label>
+                    <label for="email">
+                        Email <br>
+                        <input type="text" class="inputForm" name="email" placeholder="  exemple@gmail.com">
+                    </label>
+                    <label for="Probleme_type" >
+                        Probleme Type <br>
+                        <select name="Probleme_type"  class="inputForm" id="Probleme_type">
+                            <option value="Techinque">Techinque</option>
+                            <option value="Techinque">Techinque</option>
+                            <option value="Techinque">Techinque</option>
+                            <option value="Techinque">Techinque</option>
+                        </select>
+                    </label>
+                    <label for="message">
+                        Message <br>
+                        <textarea name="message"  class="inputForm" style="height: 220px;"></textarea>
+                    </label>
+                    <BUtton >Envoye</BUtton>
+                </form>
+            </div>
+       </section>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">FQA</a></li>
+            </ul>
+        </nav>
+        <div class="cpy">
+            Copy right 2023
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script src="script.js"></script>
+</body>
+</html>
