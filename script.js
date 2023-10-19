@@ -55,7 +55,8 @@ afichageAccesoire.addEventListener('click',function afichageAccesoire(){
 // } 
 function addPanie(indice, prx,nbPrd){
     let panie = JSON.parse(localStorage.getItem('panie')) || [];
-    panie.push({ indice, prx,nbPrd});
+    var qte=1;
+    panie.push({ indice, prx,nbPrd,qte});
     localStorage.setItem('panie', JSON.stringify(panie));
     updateAffichagePanie();
 
@@ -85,18 +86,23 @@ function plusPanie(position,prix){
     var totalProduit =document.getElementById("totalProduit");
     var elements = document.querySelectorAll('.quantite');
     var totalShipping = document.getElementById('PrixShipping');
-    
     var total = parseInt(totalProduit.textContent);
     elements[position].innerHTML=Number(elements[position].textContent)+1;
     for(var i=0;i<elements.length;i++){
-        if(i==position) total+=prix;
+        if(i==position){
+            total+=prix;
+            let panie = JSON.parse(localStorage.getItem('panie')) || [];
+            panie[i].qte = Number(elements[position].textContent);
+            localStorage.setItem('panie', JSON.stringify(panie));
+        } 
+
     }
     
     var totalPrixShipping = document.getElementById("totalPrixShipping");
     totalPrixShipping.innerHTML=Number(total+totalShipping);
     totalProduit.innerHTML = total;
     let panie = JSON.parse(localStorage.getItem('panie')) || [];
-    totalPrixShipping.innerHTML=total+panie.length*50;
+    totalPrixShipping.innerHTML=total+panie.length*15;
 }
 function poinPanie(position,prix){
     var totalPrixShipping = document.getElementById("totalPrixShipping");
@@ -106,13 +112,24 @@ function poinPanie(position,prix){
     if(Number(elements[position].textContent)>0){
         elements[position].innerHTML=Number(elements[position].textContent)-1;
         for(var i=0;i<elements.length;i++){
-            if(i==position) total-=prix;
+            if(i==position){
+                total-=prix;
+                let panie = JSON.parse(localStorage.getItem('panie')) || [];
+                panie[i].qte = Number(elements[position].textContent);
+                localStorage.setItem('panie', JSON.stringify(panie));
+            } 
         }
         totalProduit.innerHTML = total;
         let panie = JSON.parse(localStorage.getItem('panie')) || [];
-        totalPrixShipping.innerHTML=total+panie.length*50;
+        totalPrixShipping.innerHTML=total+panie.length*15;
     }
     
 }
-
+function delet(indice){
+    let panie = JSON.parse(localStorage.getItem('panie')) || [];
+    panie.splice(indice, 1);
+    localStorage.setItem('panie', JSON.stringify(panie));
+    location.reload();
+}
 // definition of done planing pooker
+// panie.splice(0, 1);
