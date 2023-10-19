@@ -84,27 +84,34 @@ function updateAffichagePanie() {
 function plusPanie(position,prix){
     var totalProduit =document.getElementById("totalProduit");
     var elements = document.querySelectorAll('.quantite');
+    var totalShipping = document.getElementById('PrixShipping');
+    
     var total = parseInt(totalProduit.textContent);
     elements[position].innerHTML=Number(elements[position].textContent)+1;
     for(var i=0;i<elements.length;i++){
         if(i==position) total+=prix;
     }
-    totalProduit.innerHTML = total;
-    var totalPrixShipping = document.getElementById("totalPrixShipping");
-    totalPrixShipping.innerHTML=total+50;
     
+    var totalPrixShipping = document.getElementById("totalPrixShipping");
+    totalPrixShipping.innerHTML=Number(total+totalShipping);
+    totalProduit.innerHTML = total;
+    let panie = JSON.parse(localStorage.getItem('panie')) || [];
+    totalPrixShipping.innerHTML=total+panie.length*50;
 }
 function poinPanie(position,prix){
+    var totalPrixShipping = document.getElementById("totalPrixShipping");
     var totalProduit =document.getElementById("totalProduit");
     var elements = document.querySelectorAll('.quantite');
     var total = parseInt(totalProduit.textContent);
-    elements[position].innerHTML=Number(elements[position].textContent)-1;
-    for(var i=0;i<elements.length;i++){
-        if(i==position) total-=prix;
+    if(Number(elements[position].textContent)>0){
+        elements[position].innerHTML=Number(elements[position].textContent)-1;
+        for(var i=0;i<elements.length;i++){
+            if(i==position) total-=prix;
+        }
+        totalProduit.innerHTML = total;
+        let panie = JSON.parse(localStorage.getItem('panie')) || [];
+        totalPrixShipping.innerHTML=total+panie.length*50;
     }
-    totalProduit.innerHTML = total;
-    var totalPrixShipping = document.getElementById("totalPrixShipping");
-    totalPrixShipping.innerHTML=total+50;
     
 }
 
