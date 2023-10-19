@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Home</title>
 </head>
-<body>
+<body onload="updateAffichagePanie()">
     <header>
         <nav class="logo_search">
             <a href="index.html"><img src="images/logo.jpg" alt="logo"></a>
@@ -20,7 +20,7 @@
                 <li><a href="#">Create account</a></li>
                 <li><img src="images/moroco.png" class="moroco" alt="moroco"></li>
                 <li>MAR</li>
-                <li><img src="images/store.png" onclick="panieCart()" class="store" alt="store">
+                <li><img src="images/store.png"  onclick="panieCart()"class="store" alt="store">
                     <div id="cart-panie">
                         <h4  style="margin: 15px; text-align: center;">Lists Produits </h4> <hr style="width: 100%; margin: 10px 0;">
                         <div id="produitsCard">
@@ -43,87 +43,57 @@
     </header>
     <main id="panieHeight">
         <section id="panie">
-            <div class="products_panie">
+            <div class="products_panie" >
                 <div class="titel" style=" border-bottom: 1px solid #99d9d9;">
                     <label class="filter_check"  style="margin: 20px 0; margin-left: 10px;">
                         <input type="checkbox">
                         <span class="virify"></span>
                         Select All
                     </label> 
-                </div>
-                <div class="produit_selected">
-                    <div class="prd_image">
-                        <label class="filter_check"  style="margin: 20px 0; margin-left: 10px;">
-                            <input type="checkbox">
-                            <span class="virify"></span>
-                        </label> 
-                        <img src="images/Clavie.png" alt="clavie">
-                        <span>Produit Name <br> <p>Produit </p> <h3>$ 1900</h3><span>Shipping : $15 </span> </span>
-                    </div>
-                    <div class="sup_plus">
-                        <div class="h_d">
-                            <img src="images/heart.png" alt="heart">
-                            <img src="images/delet.png" alt="delet">
-                        </div>
-                        <div class="add_cart_counyt">
-                            <div class="moin" onclick="poinPanie(0,1900)">-</div>
-                            <span class="quantite">1</span>
-                            <div class="moin plus" onclick="plusPanie(0,1900)">+</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="produit_selected">
-                    <div class="prd_image">
-                        <label class="filter_check"  style="margin: 20px 0; margin-left: 10px;">
-                            <input type="checkbox">
-                            <span class="virify"></span>
-                        </label> 
-                        <img src="images/Clavie.png" alt="clavie">
-                        <span>Produit Name <br> <p>Produit </p> <h3>$ 400</h3><span>Shipping : $15 </span> </span>
-                    </div>
-                    <div class="sup_plus">
-                        <div class="h_d">
-                            <img src="images/heart.png" alt="heart">
-                            <img src="images/delet.png" alt="delet">
-                        </div>
-                        <div class="add_cart_counyt">
-                            <div class="moin" onclick="poinPanie(1,400)">-</div>
-                            <span class="quantite">1</span>
-                            <div class="moin plus"  onclick="plusPanie(1,400)">+</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="produit_selected">
-                    <div class="prd_image">
-                        <label class="filter_check"  style="margin: 20px 0; margin-left: 10px;">
-                            <input type="checkbox">
-                            <span class="virify"></span>
-                        </label> 
-                        <img src="images/Clavie.png" alt="clavie">
-                        <span>Produit Name <br> <p>Produit </p> <h3>$ 1000</h3><span>Shipping : $15 </span> </span>
-                    </div>
-                    <div class="sup_plus">
-                        <div class="h_d">
-                            <img src="images/heart.png" alt="heart">
-                            <img src="images/delet.png" alt="delet">
-                        </div>
-                        <div class="add_cart_counyt">
-                            <div class="moin" onclick="poinPanie(2,1000)">-</div>
-                            <span class="quantite">1</span>
-                            <div class="moin plus"  onclick="plusPanie(2,1000)">+</div>
-                        </div>
-                    </div>
+                </div> 
+                <div id="productlist">
+                    
                 </div>
             </div>
             <div class="product_payment" >
                 <h3>Summary</h3>
-                <span><div>Total Produit</div> <div id="totalProduit">3200</div></span>
-                <span><div>Shipping</div> <div>$ 50</div></span>
-                <b><div>total</div><div id="totalPrixShipping">$ 3250</div></b>
+                <span><div>Total Produit</div> <div id="totalProduit"></div></span>
+                <span><div>Shipping</div> <div id="PrixShipping"></div></span>
+                <b><div>total</div><div id="totalPrixShipping"></div></b>
                 <button>Checkout</button>
                 <h3>Paymant Mechode</h3>
                 <p class="PaymantMth">Paypal | creaditCard</p>
             </div>
+            <script>
+                var listProduit = document.getElementById('productlist');
+                var totalProduit = document.getElementById('totalProduit');
+                var totalShipping = document.getElementById('PrixShipping');
+                var totalPrixShipping = document.getElementById('totalPrixShipping');
+                let produits="";
+                let panie = JSON.parse(localStorage.getItem('panie')) || [];
+                let total=0;
+                let PrixShipping=0;
+                for(let i = 0; i < panie.length; i++){
+                    let item=panie[i];
+                        
+                        produits+="<div class='produit_selected'><div class='prd_image'>";
+                        produits+=" <label class='filter_check'  style='margin: 20px 0; margin-left: 10px;'>";
+                        produits+="<input type='checkbox'> <span class='virify'></span></label> ";
+                        produits+="<img src='images/Clavie.png' alt='clavie'>";
+                        produits+="<span>Produit "+item.indice+" <br> <p>Produit </p> <h3>$ "+item.prx+"</h3><span>Shipping : $15 </span> </span> </div>";
+                        produits+="<div class='sup_plus'> <div class='h_d'> <img src='images/heart.png' alt='heart'> <img src='images/delet.png' alt='delet'></div>";
+                        produits+="<div class='add_cart_counyt'> <div class='moin' onclick='poinPanie("+i+","+item.prx+")'>-</div>";
+                        produits+="<span class='quantite'>1</span><div class='moin plus' onclick='plusPanie("+i+","+item.prx+")'>+</div>";
+                        produits+=" </div> </div> </div>";
+                        total+=Number(item.prx);
+                        PrixShipping+=50;
+                }
+                var prxShipin = panie.length*50;
+                totalShipping.innerHTML = prxShipin;
+                listProduit.innerHTML = produits;
+                totalProduit.innerHTML = total;
+                totalPrixShipping.innerHTML = total+PrixShipping;
+            </script>
         </section>
     </main>
     <footer>
