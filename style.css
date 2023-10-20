@@ -1088,8 +1088,30 @@ border-radius: 6px;
        
         
     }
+    @media screen and (max-width: 780px){
+        header #search{
+            position: absolute;
+            z-index: 20000;
+            display: none;
+            top: 80px;
+            width: 90%;
+        }
+        header .logo_search img{
+            width: 55px;
+        }
+        header{
+            padding: 0 5px;
+        }
+        .logo_search img{
+            margin-left: 10px;
+            display: block !important;
+        }
+    }
 }
 
 .hidden-navWeb{
     display: block;
+}
+.lg-header-block{
+    display: block !important;
 }
