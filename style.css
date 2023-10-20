@@ -769,9 +769,9 @@ border-radius: 6px;
     position: absolute;
     width: 500px;
     background-color: white;
-    right: 50px;
+    right: 30px;
     box-shadow: 2px 2px 10px lightgray ;
-    margin-top: 20px;
+    top: -120px;
     padding: 10px 20px 30px 20px;
     border-radius: 8px;
     display: none;
@@ -830,9 +830,13 @@ border-radius: 6px;
 @media screen and (max-width: 1280px){
   
     header #search{
-        width: 100%;
+        display: none;
     }
-    
+    @media screen and (max-width:600px) {
+        #cart-panie{
+            width: 300px;
+        }
+    }
     #Home_vue nav {
         position: absolute;
         background-color: white;
@@ -874,7 +878,7 @@ border-radius: 6px;
         width: 35px;
     }
     .menu{
-        display: block;
+        display: flex;
         position: relative;
     }
     header .logo_search img{
@@ -993,23 +997,27 @@ border-radius: 6px;
     }
     .navigation_info{
         position: absolute;
-        top: 80%;
-        right: 0;
-        width: 97%;
+        top: 0%;
+        left: 0;
+        width: 90%;
+        height: 98vh;
         background-color: white;
-        box-shadow: 2px 2px 10px lightgray;
-        border-radius: 10px;
-        padding: 10px;
+        border: 1px solid #94A3B8;
+        padding: 10px 0;
         display: none;
         z-index: 100;
     }
     .menuBlock{
-        display: block;
+        display: grid;
+    }
+    .menuBlock ul li{
+        border-bottom: 1px solid #94A3B8;
+        width: 90%;
+        padding: 20px;
     }
     #menuMobile ul{
         display: grid;
-        justify-items: end;
-        padding-right: 20px;
+        justify-items: start;
         height: 300px;
     }
     .Border_Separe{
@@ -1034,53 +1042,54 @@ border-radius: 6px;
     #contact_page  .contact-desciption h2{
         font-size: 45px; 
     }
+    @media screen and (min-width: 610px) and (max-width: 780px){
+        #Best_Remise{
+            grid-template-columns: 50% 50%;
+        }
+        #next{
+            top: 30%;
+            margin-left: 20px;
+        }
+        #previews{
+            top: 30%;
+            margin-left: 0px;
+        }
+    }
+    @media screen and (min-width: 780px) and (max-width: 1280px){
+        #Home_vue{
+            grid-template-columns: 100%;
+        }
+        .search_head{
+            display: none;
+        } 
+        .hidden-nav ul li{
+            height: 15px;
+        }
+        header #search{
+            display: block;
+            width: 400px;
+            height: 40px;
+        }
+        #Best_Remise{
+            grid-template-columns: 34% 34% 34%;
+        }
+        #Best_Remise .star{
+           gap: 2px;
+           width: 35%;
+        }
+        #next{
+            top: 40%;
+            right: 0%;
+        }
+        #previews{
+            top: 40%;
+            margin-left: 10px;
+        }
+       
+        
+    }
 }
-@media screen and (min-width: 610px) and (max-width: 780px){
-    #Best_Remise{
-        grid-template-columns: 50% 50%;
-    }
-    #next{
-        top: 30%;
-        margin-left: 20px;
-    }
-    #previews{
-        top: 30%;
-        margin-left: 0px;
-    }
-}
-@media screen and (min-width: 780px) and (max-width: 1280px){
-    #Home_vue{
-        grid-template-columns: 100%;
-    }
-    .search_head{
-        display: none;
-    } 
-    .hidden-nav ul li{
-        height: 15px;
-    }
-    header #search{
-        display: block;
-        width: 400px;
-        height: 40px;
-    }
-    #Best_Remise{
-        grid-template-columns: 34% 34% 34%;
-    }
-    #Best_Remise .star{
-       gap: 2px;
-       width: 35%;
-    }
-    #next{
-        top: 40%;
-        right: 0%;
-    }
-    #previews{
-        top: 40%;
-        margin-left: 10px;
-    }
-   
-    
-}
+
 .hidden-navWeb{
     display: block;
 }
