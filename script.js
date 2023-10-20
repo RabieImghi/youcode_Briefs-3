@@ -157,5 +157,17 @@ function aff(){
     totalProduit.innerHTML = total;
     totalPrixShipping.innerHTML = total+PrixShipping;
 }
+function afichageSearch(){
+    var menuMobile = document.getElementById('search');
+    var img = document.getElementById('sr_img');
+
+    if(menuMobile.className == "lg-header2"){
+        menuMobile.classList.add("lg-header-block");
+        img.src="images/ferme.png"
+    }else if(menuMobile.className == "lg-header2 lg-header-block"){
+        menuMobile.classList.remove('lg-header-block');
+        img.src="images/search.png"
+    }
+}
 // definition of done planing pooker
 // panie.splice(0, 1);

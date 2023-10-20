@@ -11,8 +11,9 @@
 <body onload="updateAffichagePanie()"> 
     <header>
         <nav class="logo_search">
-            <a href="index.html"><img src="images/logo.jpg" alt="logo"></a>
-            <input type="search" name="Search" id="search" placeholder="Search">
+            <a href="index.html"><img class="lg-header" src="images/logo.jpg"  alt="logo"></a>
+            <input type="search" name="Search" id="search"class="lg-header2"  placeholder="Search">
+            <img src="images/search.png" style="display: none; width: 30px;" id="sr_img"  onclick="afichageSearch()">
         </nav>
         <div style="display: flex; gap: 20px; align-items: center;">
         <img class="labemM menu" src="images/store.png" style="width: 40px;" onclick="panieCart()"class="store" alt="store">
