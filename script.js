@@ -25,11 +25,9 @@ function afichageMenu(){
     if(menuMobile.className == "navigation_info"){
         menuMobile.classList.add("menuBlock");
         imageMenu.src="images/ferme.png";
-        body.style.filter= "brightness(80%)";
     }else if(menuMobile.className == "navigation_info menuBlock"){
         menuMobile.classList.remove('menuBlock');
-    kj,    imageMenu.src="images/2099043.png";
-        body.style.filter= "opacity(100%)";
+        imageMenu.src="images/2099043.png";
     }
 }
 // afichge panie
