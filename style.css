@@ -1045,7 +1045,20 @@ border-radius: 6px;
         padding: 0;
     }
     #Home_vue nav{
-        margin-top: 40px;
+        padding: 10px;
+        width: 95%;
+        height: 100%;
+        top: 0;
+        display: block !important;
+    }
+    #Home_vue nav ul{
+        width: 80%;
+        border: none;
+    }
+    #Home_vue nav ul li {
+        margin-top: 10px;
+        border: 1px solid black;
+        border-radius: 7px;
     }
     .labem{
         display: flex; 
