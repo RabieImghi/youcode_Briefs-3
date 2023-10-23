@@ -828,9 +828,29 @@ border-radius: 6px;
 }
 /*Responsive code*/
 @media screen and (max-width: 1280px){
-  
     header #search{
         display: none;
+    }
+    #Home_vue {
+        margin: 0;
+        padding: 4px;
+    }
+    h2{
+        margin: 0;
+        padding: 4px;
+    }
+    hr{
+        margin: 4px;
+    }
+    #Best_Remise {
+        margin: 4px;
+    }
+    #product_page{
+        margin: 4px;
+    }
+    #detail_poduit ,#description_detail ,.rv_detail,#review_description h3 {
+        margin: 5px;
+        padding-top: 10px;
     }
     @media screen and (max-width:600px) {
         #cart-panie{
@@ -930,7 +950,7 @@ border-radius: 6px;
         display: block;
     }
     #description_detail .desc_image_detail img{
-        width: 400px;
+        width: 100%;
     }
     #element_addcart{
         margin: 0;
