@@ -138,7 +138,7 @@ function aff(){
     for(let i = 0; i < panie.length; i++){
         let item=panie[i];
             
-            produits+="<div class='produit_selected'><div class='prd_image'>";
+            produits+="<a href='detail.html'><div class='produit_selected'><div class='prd_image'>";
             produits+=" <label class='filter_check'  style='margin: 20px 0; margin-left: 10px;'>";
             produits+="<input type='checkbox'> <span class='virify'></span></label> ";
             produits+="<img src='images/Clavie.png' alt='clavie'>";
@@ -146,7 +146,7 @@ function aff(){
             produits+="<div class='sup_plus'> <div class='h_d'> <img src='images/heart.png' alt='heart'> <img src='images/delet.png' onclick='delet("+i+")' alt='delet'></div>";
             produits+="<div class='add_cart_counyt'> <div class='moin' onclick='poinPanie("+i+","+item.prx+")'>-</div>";
             produits+="<span class='quantite'>"+item.qte+"</span><div class='moin plus' onclick='plusPanie("+i+","+item.prx+")'>+</div>";
-            produits+=" </div> </div> </div>";
+            produits+=" </div> </div> </div></a>";
             if(item.qte>0)
             total+=Number(item.prx*item.qte);
             PrixShipping+=15;

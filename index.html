@@ -90,7 +90,7 @@
                 prx+=323;
                 var PrdName="produit"+i;
                 produits+="<div class='produits' data-aos='zoom-in'>";
-                produits+=" <div class='produit'> <img src='images/Clavie.png' alt='clavie'> </div>";
+                produits+="<a href='detail.html' style='text-decoration:none;'> <div class='produit'> <img src='images/Clavie.png' alt='clavie'> </div>";
                 produits+="<div class='description'>";
                 produits+="<span>$ "+prx+"</span> <span class='s'>$2600 <div class='ligneSup'></div></span>";
                 produits+=" <p>Free Shoping Free Shoping <br> Free Shoping Free Shoping free</p>";
@@ -98,7 +98,7 @@
                 produits+="<div class='star'> <img src='images/white-star-icon-10.png' alt='white star'> <span>5.0</span> </div>";
                 produits+="<div style='display: flex; align-items: center; justify-content: space-between; width: 100%;'>";
                 produits+="<span class='sold'>120 Sold</span><img class='add_cart' src='images/hous.png' alt='hous' onclick='addPanie("+i+","+prx+","+1+")'>";
-                produits+="</div> </div></div></div>";
+                produits+="</div> </div></div></a></div>";
             };
             produit_div[1].innerHTML= produits;
             produits="";
@@ -106,7 +106,7 @@
                 prx+=323;
                 var PrdName="produit"+i;
                 produits+="<div class='produits' data-aos='zoom-in'>";
-                produits+=" <div class='produit'> <img src='images/Clavie.png' alt='clavie'> </div>";
+                produits+=" <a href='detail.html' style='text-decoration:none;'><div class='produit'> <img src='images/Clavie.png' alt='clavie'> </div>";
                 produits+="<div class='description'>";
                 produits+="<span>$ "+prx+"</span> <span class='s'>$2600 <div class='ligneSup'></div></span>";
                 produits+=" <p>Free Shoping Free Shoping <br> Free Shoping Free Shoping free</p>";
@@ -114,7 +114,7 @@
                 produits+="<div class='star'> <img src='images/white-star-icon-10.png' alt='white star'> <span>5.0</span> </div>";
                 produits+="<div style='display: flex; align-items: center; justify-content: space-between; width: 100%;'>";
                 produits+="<span class='sold'>120 Sold</span><img class='add_cart' src='images/hous.png' alt='hous' onclick='addPanie("+i+","+prx+","+1+")'>";
-                produits+="</div> </div></div></div>";
+                produits+="</div> </div></div></a></div>";
             };
             produit_div[0].innerHTML= produits;
         </script>
@@ -129,7 +129,7 @@
         <nav>
             <ul>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Support</a></li>
+                <li><a href="contact.html">Support</a></li>
                 <li><a href="#">FQA</a></li>
             </ul>
         </nav>
