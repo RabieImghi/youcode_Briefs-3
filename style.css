@@ -826,6 +826,7 @@ border-radius: 6px;
     border: none;
     border-radius: 7px;
 }
+
 /*Responsive code*/
 @media screen and (max-width: 1280px){
     header #search{
@@ -835,6 +836,7 @@ border-radius: 6px;
         margin: 0;
         padding: 4px;
     }
+    
     h2{
         margin: 0;
         padding: 4px;
@@ -1005,7 +1007,7 @@ border-radius: 6px;
         width: 100%;
     }
     .hidden-nav{
-        display: none;
+        display: none !important;
     }
     #next{
         top: 30%;
@@ -1046,10 +1048,11 @@ border-radius: 6px;
     }
     #Home_vue nav{
         padding: 10px;
-        width: 95%;
-        height: 100%;
-        top: 0;
-        display: block !important;
+        width: 70%;
+        min-height: 70%;
+        box-shadow: 1px 1px 10px lightgray;
+        margin-top: 40px;
+        display: block;
     }
     #Home_vue nav ul{
         width: 80%;
@@ -1143,7 +1146,7 @@ border-radius: 6px;
 }
 
 .hidden-navWeb{
-    display: block;
+    display: block !important;
 }
 .lg-header-block{
     display: block !important;
