@@ -51,12 +51,14 @@ afichageAccesoire.addEventListener('click',function afichageAccesoire(){
 
 function addPanie(indice, prx,nbPrd){
     let panie = JSON.parse(localStorage.getItem('panie')) || [];
-    var qte=1;
+    var quant=document.getElementById('qtePrdDtl');
+    if(Number(quant.textContent)>1) var qte=Number(quant.textContent);
+    else var qte=1;
     panie.push({ indice, prx,nbPrd,qte});
     localStorage.setItem('panie', JSON.stringify(panie));
     updateAffichagePanie();
-
 } 
+ 
 function updateAffichagePanie() {
     let produitGroup = document.getElementById('produitsCard');
     let prixDiv = document.getElementById('prixTotal');
@@ -119,6 +121,25 @@ function poinPanie(position,prix){
     }
     
 }
+function moinPanieDetail(){
+    var qte = document.getElementById('qtePrdDtl');
+    if(Number(qte.textContent)>0) 
+        qte.innerHTML=Number(--qte.textContent);
+}
+function plusPanieDetail(){
+    var qte = document.getElementById('qtePrdDtl');
+    qte.innerHTML=Number(++qte.textContent);
+}
+function plusPanieDetaily(){
+    var indice =0; var prx=4322; var nbPrd=233;  
+    var qte = document.getElementById('qtePrdDtl');
+    var qt=Number(++qte.textContent);
+    let panie = JSON.parse(localStorage.getItem('panie')) || [];
+    panie.push({ indice, prx,nbPrd,qt});
+    localStorage.setItem('panie', JSON.stringify(panie));
+    updateAffichagePanie();
+    qte.innerHTML=qt ;
+}
 function delet(indice){
     let panie = JSON.parse(localStorage.getItem('panie')) || [];
     panie.splice(indice, 1);
@@ -138,7 +159,7 @@ function aff(){
     for(let i = 0; i < panie.length; i++){
         let item=panie[i];
             
-            produits+="<a href='detail.html'><div class='produit_selected'><div class='prd_image'>";
+            produits+="<div class='produit_selected'><div class='prd_image'>";
             produits+=" <label class='filter_check'  style='margin: 20px 0; margin-left: 10px;'>";
             produits+="<input type='checkbox'> <span class='virify'></span></label> ";
             produits+="<img src='images/Clavie.png' alt='clavie'>";
@@ -146,7 +167,7 @@ function aff(){
             produits+="<div class='sup_plus'> <div class='h_d'> <img src='images/heart.png' alt='heart'> <img src='images/delet.png' onclick='delet("+i+")' alt='delet'></div>";
             produits+="<div class='add_cart_counyt'> <div class='moin' onclick='poinPanie("+i+","+item.prx+")'>-</div>";
             produits+="<span class='quantite'>"+item.qte+"</span><div class='moin plus' onclick='plusPanie("+i+","+item.prx+")'>+</div>";
-            produits+=" </div> </div> </div></a>";
+            produits+=" </div> </div> </div>";
             if(item.qte>0)
             total+=Number(item.prx*item.qte);
             PrixShipping+=15;

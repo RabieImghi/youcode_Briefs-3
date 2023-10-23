@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Home</title>
 </head>
-<body>
+<body onload="updateAffichagePanie()">
     <header>
         <nav class="logo_search">
             <a href="index.html"><img class="lg-header" src="images/logo2.jpg"  alt="logo"></a>
@@ -115,13 +115,13 @@
                         <p>shipping </p>
                         <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Esse nisi </p>
                         <div class="add_cart_counyt">
-                            <div class="moin">-</div>
-                            <span>2</span>
-                            <div class="moin plus">+</div>
+                            <div class="moin" onclick='moinPanieDetail()'>-</div>
+                            <span id="qtePrdDtl">1</span>
+                            <div class="moin plus" onclick='plusPanieDetail()'>+</div>
                         </div>
                     </div>
                     <div class="button_detail">
-                        <button class="button1">Add to cart</button>
+                        <button class="button1" onclick="addPanie(0,2000,122)">Add to cart</button>
                         <button class="button2">Easy more</button>
                     </div>
                     <div class="share_chat">
