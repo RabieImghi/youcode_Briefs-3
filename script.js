@@ -28,7 +28,7 @@ function afichageMenu(){
         body.style.filter= "brightness(80%)";
     }else if(menuMobile.className == "navigation_info menuBlock"){
         menuMobile.classList.remove('menuBlock');
-        imageMenu.src="images/2099043.png";
+    kj,    imageMenu.src="images/2099043.png";
         body.style.filter= "opacity(100%)";
     }
 }
@@ -192,3 +192,7 @@ function afichageSearch(){
 }
 // definition of done planing pooker
 // panie.splice(0, 1);
+
+
+
+
