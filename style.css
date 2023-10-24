@@ -71,6 +71,7 @@ header .navigation_info ul li a{
 #Home_vue nav ul {
     border: 1px solid #94A3B8;
     border-radius: 10px;
+    margin-top: 55px;
 }
 #Home_vue nav ul li{
     color: #707070;
@@ -104,7 +105,7 @@ header .navigation_info ul li a{
 }
 #Best_Remise .description{
     background-color: #F1F5F9;
-    border-radius: 8px;
+    border-radius: 0 0 8px 8px;
     color: #475569;
     
     padding:20px 10px;
@@ -129,11 +130,15 @@ header .navigation_info ul li a{
     width: 30%;
 }
 #Best_Remise .produit img{
-    width: 100%;
+    width: 60%;
+    left: 8%;
     position: relative;
-    top: 15px;
+    padding: 30px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+#Best_Remise .produit{
+    border: 1px solid #808d9e1a;
 }
 #Best_Remise{
     display: grid;
@@ -749,22 +754,25 @@ border-radius: 6px;
 }
 .btnNextPrev{
     font-weight: bold;
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.565);
-    opacity: 50%;
+    width: 60px;
+    font-size: x-large;
+    opacity: 80%;
+    height: 60px;
+    background: white;
     box-shadow: 1px 1px 3px lightgray;
     border: none;
+    border-radius: 8px;
+
 }
-#next{
-    top: 40%;
-    right: 5%;
+.btn-prNx{
+    position: relative;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    
 }
-#previews{
-    top: 40%;
-    margin-left: 10px;
-}
+
 .desactiveCart{
     position: absolute;
     width: 500px;
@@ -860,6 +868,13 @@ border-radius: 6px;
     @media screen and (max-width:600px) {
         #cart-panie{
             width: 300px;
+        }
+    }
+    @media screen and (max-width:430px) {
+        .btnNextPrev{
+            font-size: large;
+            width: 20px;
+            height: 30px;
         }
     }
     #Home_vue nav {
@@ -1081,6 +1096,11 @@ border-radius: 6px;
     #contact_page  .contact-desciption h2{
         font-size: 45px; 
     }
+    .btnNextPrev{
+        font-size: large;
+        width: 60px;
+        height: 60px;
+    }
     @media screen and (min-width: 610px) and (max-width: 780px){
         #Best_Remise{
             grid-template-columns: 50% 50%;
@@ -1116,6 +1136,7 @@ border-radius: 6px;
            gap: 2px;
            width: 35%;
         }
+       
         #next{
             top: 40%;
             right: 0%;
@@ -1144,6 +1165,11 @@ border-radius: 6px;
         .logo_search img{
             margin-left: 10px;
             display: block !important;
+        }
+        .btnNextPrev{
+            font-size: large;
+            width: 50px;
+            height: 50px;
         }
     }
 }
