@@ -27,15 +27,11 @@ function panieCart(){
     var cartActive = document.getElementById('cart-panie');
     cartActive.classList.toggle("cartActive");
 }
-
 // afichge Accesoire
 var afichageAccesoire=document.getElementById("afichageAccesoire");
 afichageAccesoire.addEventListener('click',function afichageAccesoire(){
     var cartActive = document.getElementById('accesoire_div');
-    if(cartActive.className == "hidden-nav") 
-        cartActive.classList.add("hidden-nav","hidden-navWeb");
-    else if(cartActive.className == "hidden-nav hidden-navWeb") 
-    cartActive.classList.remove('hidden-navWeb');
+    cartActive.classList.toggle("hidden-navWeb");
 });
 
 function addPanie(indice, prx,nbPrd){
