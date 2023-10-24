@@ -765,7 +765,7 @@ border-radius: 6px;
     top: 40%;
     margin-left: 10px;
 }
-#cart-panie{
+.desactiveCart{
     position: absolute;
     width: 500px;
     background-color: white;
@@ -825,6 +825,9 @@ border-radius: 6px;
     font-size: 20px;
     border: none;
     border-radius: 7px;
+}
+.cartActive{
+    display: block;
 }
 
 /*Responsive code*/
