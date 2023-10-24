@@ -75,9 +75,33 @@
                     <button id="previews" class="btnNextPrev"><<</button>  
                     <button id="next" class="btnNextPrev">>></button>
                 </div>
-                <img id="imageHomeSlide" src="images/women.png" alt="image">
+                <div class="images" id="images-group" >
+                    <img id="imageHomeSlide" src="images/women.png" alt="image">
+                </div>
               
             </div>
+            <style>
+                @keyframes imageSlide{
+                    0%{
+                        width: 0;
+                        height: 90%;
+                    }
+                    100%{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                #images-group{
+                    z-index: -1;
+                    display: flex;
+                    justify-content: center;
+                    overflow: hidden;
+                    height: 90%;
+                }
+                #imageHomeSlide{
+                    animation: imageSlide 0.5s;
+                }
+            </style>
         </section>
         <h2>#Best Remise</h2>
         <section id="Best_Remise" class="Best_Remisee">
