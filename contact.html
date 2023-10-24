@@ -8,7 +8,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Home</title>
 </head>
-<body>
+<body onload="updateAffichagePanie()">
     <header>
         <nav class="logo_search">
             <a href="index.html"><img class="lg-header" src="images/logo.jpg"  alt="logo"></a>
@@ -47,7 +47,7 @@
         </div>
     </header>
     <hr>
-    <main id="body">
+    <main id="body"  onclick="hiddenMenu()">
        <section id="contact_page">
             <div class="contact-desciption">
                 <h2>Contact our team <br>
@@ -60,30 +60,36 @@
                 <form>
                     <label for="first_name">
                         Firs Name <br>
-                        <input type="text" class="inputForm" name="first_name" placeholder="  Rabie">
+                        <input type="text" id="name1" class="inputForm" name="first_name" placeholder="  Rabie" onkeyup="validName(1)">
                     </label>    
+                    <label id="MessageAlertName1" class="MessageAlert"></label>
                     <label for="last_name">
                         Last Name <br>
-                        <input type="text"class="inputForm" name="last_name" placeholder="  Ait Imghi">
+                        <input type="text" id="name2" class="inputForm" name="last_name" placeholder="  Ait Imghi" onkeyup="validName(2)">
                     </label>
+                    <label id="MessageAlertName2" class="MessageAlert"></label>
                     <label for="email">
                         Email <br>
-                        <input type="text" class="inputForm" name="email" placeholder="  exemple@gmail.com">
+                        <input id="email" type="email" class="inputForm" name="email" placeholder="  exemple@gmail.com" onkeyup="valid()">
                     </label>
+                    <label id="MessageAlertEmail" class="MessageAlert"></label>
                     <label for="Probleme_type" >
                         Probleme Type <br>
-                        <select name="Probleme_type"  class="inputForm" id="Probleme_type">
+                        <select name="Probleme_type" onclick="valideselect()" class="inputForm" id="Probleme_type">
+                            <option value="none">Select Your Problem</option>
                             <option value="Techinque">Techinque</option>
                             <option value="Techinque">Techinque</option>
                             <option value="Techinque">Techinque</option>
                             <option value="Techinque">Techinque</option>
                         </select>
                     </label>
+                    <label id="MessageAlertSelect" class="MessageAlert"></label>
                     <label for="message">
                         Message <br>
-                        <textarea name="message"  class="inputForm" style="height: 220px;"></textarea>
+                        <textarea name="message" id="name3"  onkeyup="validName(3)" class="inputForm" style="height: 220px;"></textarea>
                     </label>
-                    <BUtton >Envoye</BUtton>
+                    <label id="MessageAlertName3" class="MessageAlert"></label>
+                    <input type="button" class="button" onclick="validForme()" value="Envoye">
                 </form>
             </div>
        </section>

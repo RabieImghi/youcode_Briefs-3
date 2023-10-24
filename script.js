@@ -27,6 +27,11 @@ function afichageMenu(){
 function panieCart(){
     var cartActive = document.getElementById('cart-panie');
     cartActive.classList.toggle("cartActive");
+    cartActive.classList.remove("cartDesactiveImportant");
+}
+function hiddenMenu(){
+    var menuMobile = document.getElementById('cart-panie');
+    menuMobile.classList.add("cartDesactiveImportant");
 }
 // afichge Accesoire
 var afichageAccesoire=document.getElementById("afichageAccesoire");
@@ -44,19 +49,23 @@ function addPanie(indice, prx,nbPrd){
     localStorage.setItem('panie', JSON.stringify(panie));
     updateAffichagePanie();
 } 
- 
+
 function updateAffichagePanie() {
     let produitGroup = document.getElementById('produitsCard');
     let prixDiv = document.getElementById('prixTotal');
-    var produits="";
+    var produits="<div class='produits' style='display: flex; justify-content: space-between; padding : 20px 10px;'>"+
+    "<h4> Produit Name </h4><h4>Quantite </h4> <h4>Price</h4> </div> <hr>";
     var panie = JSON.parse(localStorage.getItem('panie')) || [];
     var ctTotal=0;
     prixTotal =0;
     for (let i = 0; i < panie.length; i++) {
         let item = panie[i];
+        var prix = item.prx*item.qte;
         produits+= "<div class='produits' style='display: flex; justify-content: space-between; margin:20px 10px;'>"+
-        "<h4>Produit "+item.indice+"</h4> <h4>"+item.prx+"$</h4> </div>";
-        prixTotal+= item.prx;
+        "<h4 style='display :flex;  align-items: center; gap:20px'><img src='images/phone.jpg' style='width: 40px;'>"+
+        " Produit "+item.indice+" </h4><h4 style='padding-top:15px;'>"+item.qte+"</h4> <h4 style='display :flex;  align-items: center; gap:20px'>"+prix+"$ "+
+        "<img src='images/delet.png' style='width: 20px;' onclick='delet("+i+")'></h4> </div>";
+        prixTotal+= prix;
         countProduit = ++ctTotal;
     }
     produitNumbers.innerHTML = countProduit;
@@ -133,7 +142,7 @@ function delet(indice){
     updateAffichagePanie();
     aff();
 }
-function aff(){
+function affichageProduitPanie(){
     var listProduit = document.getElementById('productlist');
     var totalProduit = document.getElementById('totalProduit');
     var totalShipping = document.getElementById('PrixShipping');
@@ -178,7 +187,68 @@ function afichageSearch(){
 }
 // definition of done planing pooker
 // panie.splice(0, 1);
-
+//Validation contact
+function valid(){
+    var email=document.getElementById('email');
+    var emailMes=document.getElementById('MessageAlertEmail');
+    if(email.value.match("^[A-Za-z0-9]+@gmail.com$")){
+        email.style.border='3px solid green';
+        emailMes.innerHTML='';
+        return true;
+    }
+    else {
+        email.style.border='3px solid  red';
+        emailMes.innerHTML='Invalide Email / * format exemle@gmail.com ...*/';
+    }
+}
+function validName(i){
+    var name=document.getElementById('name'+i);
+    var nameAlert=document.getElementById('MessageAlertName'+i);
+    if(name.value.match("^[A-Za-z ]{5}")){
+        name.style.border='3px solid green';
+        nameAlert.innerHTML='';
+        return true;
+    }
+    else {
+        name.style.border='3px solid  red';
+        nameAlert.innerHTML='Invalid / *  At lest 5 charachter ...*/';
+    }
+}
+function valideselect(){
+    var select=document.getElementById('Probleme_type');
+    var nameMess=document.getElementById('MessageAlertSelect');
+    if(select.value!='none'){
+        nameMess.innerHTML='';
+        select.style.border='3px solid green';
+        return true;
+    }
+    else{
+        select.style.border='3px solid red';
+        nameMess.innerHTML='Invalid  Option / *  At lest 1 option ...*/';
+    } 
+}
+function validForme(){
+    if(!validName(1)){
+        var name=document.getElementById('MessageAlertName1');
+        name.innerHTML='Invalid  First Name / * At lest 5 charachter ...*/';
+    }else if(!validName(2) ) {
+        var name=document.getElementById('MessageAlertName2');
+        name.innerHTML='Invalid  Last Name / * At lest 5 charachter ...*/';
+    }
+    else if(!valid()){
+        var name=document.getElementById('MessageAlertEmail');
+        name.innerHTML='Invalide Email / * format exemle@gmail.com ...*/';
+    } 
+    else if(!valideselect()){
+        var name=document.getElementById('MessageAlertSelect');
+        name.innerHTML='Invalid  Option / *  At lest 1 option ...*/';
+    } 
+    else if(!validName(3)) {
+        var name=document.getElementById('MessageAlertName3');
+        name.innerHTML='Invalid  Message / *  At lest 5 charachter ...*/';
+    } 
+    else alert('valide');
+}
 
 
 
