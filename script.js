@@ -20,23 +20,14 @@ previewsImage.addEventListener('click', function sliderImagesHomePrev(){
 // afichge menu mobil
 function afichageMenu(){
     var menuMobile = document.getElementById('menuMobile');
-    var imageMenu= document.getElementById("imageMenu");
-    var body= document.getElementById('body');
-    if(menuMobile.className == "navigation_info"){
-        menuMobile.classList.add("menuBlock");
-        imageMenu.src="images/ferme.png";
-    }else if(menuMobile.className == "navigation_info menuBlock"){
-        menuMobile.classList.remove('menuBlock');
-        imageMenu.src="images/2099043.png";
-    }
+    menuMobile.classList.toggle("menuBlock");
 }
 // afichge panie
 function panieCart(){
     var cartActive = document.getElementById('cart-panie');
-    if(cartActive.style.display === "none") 
-    cartActive.style.display="block";
-    else cartActive.style.display="none";
+    cartActive.classList.toggle("cartActive");
 }
+
 // afichge Accesoire
 var afichageAccesoire=document.getElementById("afichageAccesoire");
 afichageAccesoire.addEventListener('click',function afichageAccesoire(){
