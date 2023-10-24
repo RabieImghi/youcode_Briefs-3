@@ -58,6 +58,26 @@ header .navigation_info ul li a{
     padding-right: 20px;
 }
 /*Main style*/
+@keyframes imageSlide{
+    0%{
+        width: 0;
+        height: 110%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+}
+#images-group{
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 90%;
+}
+#imageHomeSlide{
+    animation: imageSlide 0.5s;
+}
 #Home_vue{
     margin: 20px 50px;
     display: grid;
@@ -772,7 +792,17 @@ border-radius: 6px;
     padding: 0 20px;
     
 }
-
+@keyframes animateCart{
+    0%{
+        top: 0;
+        width: 0;
+        background-color: white;
+    }
+    100%{
+        top: -120;
+        width: 500px;
+    }
+}
 .desactiveCart{
     position: absolute;
     width: 500px;
@@ -783,6 +813,7 @@ border-radius: 6px;
     padding: 10px 20px 30px 20px;
     border-radius: 8px;
     display: none;
+    animation: animateCart 1s;
 }
 #produitsCard{
     overflow-y: scroll;
@@ -1035,11 +1066,17 @@ border-radius: 6px;
         top: 30%;
         margin-left: -20px;
     }
+    @keyframes animate {
+        0% {  width: 0%; }
+        100% { width: 90%; }
+    }
+      
     .navigation_info{
         position: absolute;
         top: 0%;
         left: 0;
         width: 90%;
+        animation: animate 0.4s;
         height: 98vh;
         background-color: white;
         border: 1px solid #94A3B8;
