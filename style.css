@@ -58,6 +58,13 @@ header .navigation_info ul li a{
     padding-right: 20px;
 }
 /*Main style*/
+#images-group{
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 90%;
+}
 #Home_vue{
     margin: 20px 50px;
     display: grid;
@@ -82,6 +89,7 @@ header .navigation_info ul li a{
 }
 #Home_vue nav ul li a{
     position: relative;
+    width: 100%;
     bottom: 5px ;
     color: #94A3B8;
     text-decoration: none;
@@ -89,9 +97,20 @@ header .navigation_info ul li a{
 #Home_vue .image_ads{
     margin-left: 50px;
 }
+@keyframes imageSlide{
+    0%{
+        width: 0;
+        height: 100%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+}
 #Home_vue .image_ads img{
     width: 100%;
     border-radius: 10px;
+    animation: imageSlide 0.5s;
 }
 /*best remise*/
 .ligneSup{
@@ -746,6 +765,9 @@ border-radius: 6px;
     background-size: cover;
     background-color: green;
 }
+.cartDesactiveImportant{
+    display: none !important;
+}
 .menu{
     display: none;
 }
@@ -753,6 +775,7 @@ border-radius: 6px;
     display: none;
 }
 .btnNextPrev{
+   
     font-weight: bold;
     width: 60px;
     font-size: x-large;
@@ -826,6 +849,7 @@ border-radius: 6px;
     border: 1px solid rgba(0, 217, 255, 0.589);
     border-radius: 8px;
     margin-top: 10px;
+    outline: none;
 }
 #contact_page form{
     display: grid;
@@ -835,7 +859,7 @@ border-radius: 6px;
     margin: 20px;
     width: 100%;
 }
-#contact_page button{
+#contact_page .button{
     width: 20%;
     height: 40px;
     background-color: black;
@@ -848,7 +872,10 @@ border-radius: 6px;
 .cartActive{
     display: block;
 }
-
+.MessageAlert{
+    color: red;
+    font-size: 15px;
+}
 /*Responsive code*/
 @media screen and (max-width: 1280px){
     header #search{
@@ -859,6 +886,9 @@ border-radius: 6px;
         padding: 4px;
     }
     
+    #Home_vue .image_ads img{
+        animation: imageSlide 0.5s;
+    }
     h2{
         margin: 0;
         padding: 4px;
@@ -877,8 +907,20 @@ border-radius: 6px;
         padding-top: 10px;
     }
     @media screen and (max-width:600px) {
+        @keyframes animateCart2{
+            0%{
+                top: 0;
+                width: 0;
+                background-color: white;
+            }
+            100%{
+                top: -120;
+                width: 300px;
+            }
+        }
         #cart-panie{
             width: 300px;
+            animation:  animateCart2 0.5s;
         }
     }
     @media screen and (max-width:430px) {
@@ -1084,7 +1126,7 @@ border-radius: 6px;
     #Home_vue nav{
         padding: 10px;
         width: 70%;
-        min-height: 70%;
+        min-height: 80%;
         box-shadow: 1px 1px 10px lightgray;
         margin-top: 40px;
         display: block;
@@ -1092,10 +1134,11 @@ border-radius: 6px;
     #Home_vue nav ul{
         width: 80%;
         border: none;
+        margin: 0;
     }
     #Home_vue nav ul li {
         margin-top: 10px;
-        border: 1px solid black;
+        border: 1px solid rgba(87, 87, 87, 0.075);
         border-radius: 7px;
     }
     .labem{

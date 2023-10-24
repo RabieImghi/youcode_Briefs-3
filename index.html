@@ -47,7 +47,7 @@
         </div>
     </header>
         <hr>
-    <main id="body">
+    <main id="body"  onclick="hiddenMenu()">
         <section id="Home_vue" >
             <div class="labem" id="afichageAccesoire" >
                 <img  src="images/show.png" style="width: 30px;"  alt="menu">
@@ -57,15 +57,15 @@
             <nav id="accesoire_div" class="hidden-nav" style="display: grid; grid-template-columns: 80% 10%;">
                 <div class="navList">
                 <ul>
-                    <li><img src="images/shirt.png" alt="shirt"><a href="product.html">Accessoires</a></li>
-                    <li><img src="images/shirt.png" alt="shirt"><a href="product.html">Accessoires</a></li>
-                    <li><img src="images/shirt.png" alt="shirt"><a href="product.html">Accessoires</a></li>
-                    <li><img src="images/shirt.png" alt="shirt"><a href="product.html">Accessoires</a></li>
-                    <li><img src="images/shirt.png" alt="shirt"><a href="product.html">Accessoires</a></li>
-                    <li><img src="images/shirt.png" alt="shirt"><a href="product.html">Accessoires</a></li>
-                    <li><img src="images/shirt.png" alt="shirt"><a href="product.html">Accessoires</a></li>
-                    <li><img src="images/shirt.png" alt="shirt"><a href="product.html">Accessoires</a></li>
-                    <li><img src="images/shirt.png" alt="shirt"><a href="#">Accessoires</a></li>
+                    <li><a href="product.html"><img src="images/shirt.png" alt="shirt">Accessoires</a></li>
+                    <li><a href="product.html"><img src="images/shirt.png" alt="shirt">Accessoires</a></li>
+                    <li><a href="product.html"><img src="images/shirt.png" alt="shirt">Accessoires</a></li>
+                    <li><a href="product.html"><img src="images/shirt.png" alt="shirt">Accessoires</a></li>
+                    <li><a href="product.html"><img src="images/shirt.png" alt="shirt">Accessoires</a></li>
+                    <li><a href="product.html"><img src="images/shirt.png" alt="shirt">Accessoires</a></li>
+                    <li><a href="product.html"><img src="images/shirt.png" alt="shirt">Accessoires</a></li>
+                    <li><a href="product.html"><img src="images/shirt.png" alt="shirt">Accessoires</a></li>
+                    <li><a href="product.html"><img src="images/shirt.png" alt="shirt">Accessoires</a></li>
                 </ul>   
                 </div>
             </nav>
@@ -80,28 +80,6 @@
                 </div>
               
             </div>
-            <style>
-                @keyframes imageSlide{
-                    0%{
-                        width: 0;
-                        height: 90%;
-                    }
-                    100%{
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-                #images-group{
-                    z-index: -1;
-                    display: flex;
-                    justify-content: center;
-                    overflow: hidden;
-                    height: 90%;
-                }
-                #imageHomeSlide{
-                    animation: imageSlide 0.5s;
-                }
-            </style>
         </section>
         <h2>#Best Remise</h2>
         <section id="Best_Remise" class="Best_Remisee">
@@ -168,6 +146,7 @@
         </div>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>  AOS.init(); </script>
     <script src="script.js"></script>
 </body>

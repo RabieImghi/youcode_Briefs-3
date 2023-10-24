@@ -10,7 +10,7 @@
 <body onload="updateAffichagePanie()">
     <header>
         <nav class="logo_search">
-            <a href="index.html"><img class="lg-header" src="images/logo2.jpg"  alt="logo"></a>
+            <a href="index.html"><img class="lg-header" src="images/logo.jpg"  alt="logo"></a>
             <input type="search" name="Search" id="search"class="lg-header2"  placeholder="Search">
             <img src="images/search.png" style="display: none; width: 30px;" id="sr_img"  onclick="afichageSearch()">
         </nav>
@@ -25,7 +25,7 @@
                 <li ><img src="images/store.png"  onclick="panieCart()"class="store" alt="store"></li>
             </ul>
         </nav>
-        <div id="cart-panie" style="margin-top:200px;">
+        <div id="cart-panie" class="desactiveCart" style="margin-top:200px;">
             <h4  style="margin: 15px; text-align: center;">Lists Produits </h4> <hr style="width: 100%; margin: 10px 0;">
             <div id="produitsCard">
                 <div class='produits' style='text-align: center; margin:20px 10px;'>
@@ -46,7 +46,7 @@
         </div>
     </header>
     <hr >
-    <main id="body">
+    <main id="body"  onclick="hiddenMenu()">
         <section id="detail_poduit">
             <section class="detail_image">
                 <div class="image">
