@@ -772,7 +772,17 @@ border-radius: 6px;
     padding: 0 20px;
     
 }
-
+@keyframes animateCart{
+    0%{
+        top: 0;
+        width: 0;
+        background-color: white;
+    }
+    100%{
+        top: -120;
+        width: 500px;
+    }
+}
 .desactiveCart{
     position: absolute;
     width: 500px;
@@ -783,6 +793,7 @@ border-radius: 6px;
     padding: 10px 20px 30px 20px;
     border-radius: 8px;
     display: none;
+    animation: animateCart 1s;
 }
 #produitsCard{
     overflow-y: scroll;
@@ -1035,11 +1046,17 @@ border-radius: 6px;
         top: 30%;
         margin-left: -20px;
     }
+    @keyframes animate {
+        0% {  width: 0%; }
+        100% { width: 90%; }
+    }
+      
     .navigation_info{
         position: absolute;
         top: 0%;
         left: 0;
         width: 90%;
+        animation: animate 0.4s;
         height: 98vh;
         background-color: white;
         border: 1px solid #94A3B8;

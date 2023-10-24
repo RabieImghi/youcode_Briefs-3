@@ -2,6 +2,7 @@ let cont = 0;
 let countProduit=0;
 let produitNumbers= document.getElementById("produitCount");
 var tablImage=["images/women.png","images/women2.png","images/women3.png"];
+var images_group = document.getElementById('images-group');
 var image= document.getElementById("imageHomeSlide");
 var previewsImage=document.getElementById("previews");
 var nextImage=document.getElementById("next");
@@ -9,13 +10,13 @@ var nextImage=document.getElementById("next");
 nextImage.addEventListener('click',  function sliderImagesHomeNex(){
     if(cont<3) cont ++;
     if(cont==3) cont = 0;
-    image.src = tablImage[cont];
+    images_group.innerHTML = "<img id='imageHomeSlide' src='"+tablImage[cont]+"' alt='image'>";
 });
 // afichage l'image preview
 previewsImage.addEventListener('click', function sliderImagesHomePrev(){
     if(cont>=0) cont --;
     if(cont<0) cont = 2;
-    image.src = tablImage[cont];
+    images_group.innerHTML = "<img id='imageHomeSlide' src='"+tablImage[cont]+"' alt='image'>";
 });
 // afichge menu mobil
 function afichageMenu(){
