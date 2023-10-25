@@ -7,12 +7,11 @@ var image= document.getElementById("imageHomeSlide");
 var previewsImage=document.getElementById("previews");
 var nextImage=document.getElementById("next");
 // Afichage l'image suivant
-// setInterval(sliderImagesHomeNex, 3000);
-function sliderImagesHomeNex(){
+nextImage.addEventListener('click',  function sliderImagesHomeNex(){
     if(cont<3) cont ++;
     if(cont==3) cont = 0;
     images_group.innerHTML = "<img id='imageHomeSlide' src='"+tablImage[cont]+"' alt='image'>";
-}
+});
 // afichage l'image preview
 previewsImage.addEventListener('click', function sliderImagesHomePrev(){
     if(cont>=0) cont --;
@@ -56,7 +55,6 @@ function addPanie(indice, prx,nbPrd){
                 test=1;
                 break;
             }else test=0;
-
         }
     if(!test) panie.push({ indice, prx,nbPrd,qte});
     localStorage.setItem('panie', JSON.stringify(panie));
@@ -153,7 +151,7 @@ function delet(indice){
     panie.splice(indice, 1);
     localStorage.setItem('panie', JSON.stringify(panie));
     updateAffichagePanie();
-    aff();
+    affichageProduitPanie();
 }
 function affichageProduitPanie(){
     var listProduit = document.getElementById('productlist');
@@ -170,7 +168,7 @@ function affichageProduitPanie(){
             produits+="<div class='produit_selected'><div class='prd_image'>";
             produits+=" <label class='filter_check'  style='margin: 20px 0; margin-left: 10px;'>";
             produits+="<input type='checkbox'> <span class='virify'></span></label> ";
-            produits+="<img src='images/Clavie.png' alt='clavie'>";
+            produits+="<img src='images/phone.jpg' alt='clavie'>";
             produits+="<span>Produit "+item.indice+" <br> <p>Produit </p> <h3>$ "+item.prx+"</h3><span>Shipping : $15 </span> </span> </div>";
             produits+="<div class='sup_plus'> <div class='h_d'> <img src='images/heart.png' alt='heart'> <img src='images/delet.png' onclick='delet("+i+")' alt='delet'></div>";
             produits+="<div class='add_cart_counyt'> <div class='moin' onclick='poinPanie("+i+","+item.prx+")'>-</div>";
@@ -204,7 +202,7 @@ function afichageSearch(){
 function valid(){
     var email=document.getElementById('email');
     var emailMes=document.getElementById('MessageAlertEmail');
-    if(email.value.match("^[A-Za-z0-9]+@([A-Za-z]+\.+[A-Za-z]{2,4})$")){
+    if(email.value.match("^[A-Za-z0-9]+@gmail.com$")){
         email.style.border='3px solid green';
         emailMes.innerHTML='';
         return true;
@@ -262,6 +260,6 @@ function validForme(){
     } 
     else alert('valide');
 }
-window.document.getElementById("header");
+
 
 
