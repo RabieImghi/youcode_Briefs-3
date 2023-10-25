@@ -45,7 +45,18 @@ function addPanie(indice, prx,nbPrd){
     var quant=document.getElementById('qtePrdDtl');
     if(Number(quant.textContent)>1) var qte=Number(quant.textContent);
     else var qte=1;
-    panie.push({ indice, prx,nbPrd,qte});
+    var test=1;
+    if(panie.length<1) panie.push({ indice, prx,nbPrd,qte});
+    else
+        for(let i=0;i<panie.length;i++){
+            if(panie[i].indice == indice){
+                panie[i].qte=++panie[i].qte;
+                localStorage.setItem('panie', JSON.stringify(panie));
+                test=1;
+                break;
+            }else test=0;
+        }
+    if(!test) panie.push({ indice, prx,nbPrd,qte});
     localStorage.setItem('panie', JSON.stringify(panie));
     updateAffichagePanie();
 } 
