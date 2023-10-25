@@ -60,15 +60,15 @@ header .navigation_info ul li a{
 /*Main style*/
 #images-group{
     z-index: -1;
-    
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    height: 90%;
 }
 #Home_vue{
     margin: 20px 50px;
     display: grid;
     grid-template-columns: 30% 70%;
-    
 }
 #Home_vue nav img{
     width: 25px;
@@ -103,13 +103,12 @@ header .navigation_info ul li a{
         height: 100%;
     }
     100%{
-        width: 97%;
+        width: 100%;
         height: 100%;
-
     }
 }
 #Home_vue .image_ads img{
-    width: 97%;
+    width: 100%;
     border-radius: 10px;
     animation: imageSlide 0.5s;
 }
@@ -886,8 +885,9 @@ border-radius: 6px;
         margin: 0;
         padding: 4px;
     }
+    
     #Home_vue .image_ads img{
-        animation: none;
+        animation: imageSlide 0.5s;
     }
     h2{
         margin: 0;
