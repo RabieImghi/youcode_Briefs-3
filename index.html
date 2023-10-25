@@ -16,34 +16,34 @@
             <img src="images/search.png" style="display: none; width: 30px;" id="sr_img"  onclick="afichageSearch()">
         </nav>
         <div style="display: flex; gap: 20px; align-items: center;">
-        <img class="labemM menu" src="images/store.png" style="width: 40px;" onclick="panieCart()"class="store" alt="store">
-        <nav class="navigation_info" id="menuMobile">
-            <ul>
-                <li class="Border_Separe"><a href="#">Sing In</a></li>
-                <li><a href="#">Create account</a></li>
-                <li><img src="images/moroco.png" class="moroco" alt="moroco"></li>
-                <li>MAR</li>
-                <li ><img src="images/store.png"  onclick="panieCart()"class="store" alt="store"></li>
-            </ul>
-        </nav>
-        <div id="cart-panie" class="desactiveCart" style="margin-top:200px;">
-            <h4  style="margin: 15px; text-align: center;">Lists Produits </h4> <hr style="width: 100%; margin: 10px 0;">
-            <div id="produitsCard">
-                <div class='produits' style='text-align: center; margin:20px 10px;'>
-                     <h4>There is no produit</h4> 
-                    </div>
+            <img class="labemM menu" src="images/store.png" style="width: 40px;" onclick="panieCart()"class="store" alt="store">
+            <nav class="navigation_info" id="menuMobile">
+                <ul>
+                    <li class="Border_Separe"><a href="#">Sing In</a></li>
+                    <li><a href="#">Create account</a></li>
+                    <li><img src="images/moroco.png" class="moroco" alt="moroco"></li>
+                    <li>MAR</li>
+                    <li ><img src="images/store.png"  onclick="panieCart()"class="store" alt="store"></li>
+                </ul>
+            </nav>
+            <div id="cart-panie" class="desactiveCart" style="margin-top:200px;">
+                <h4  style="margin: 15px; text-align: center;">Lists Produits </h4> <hr style="width: 100%; margin: 10px 0;">
+                <div id="produitsCard">
+                    <div class='produits' style='text-align: center; margin:20px 10px;'>
+                        <h4>There is no produit</h4> 
+                        </div>
+                </div>
+                <div class="produits" style="display: flex; justify-content: space-between; margin: 20px 10px;">
+                    <h4>Total : </h4>
+                    <h4 id="prixTotal">0 $</h4>
+                </div>
+                <div class="detail-panie" style="text-align: right; margin-top: 20px;">
+                    <a href="panier.html" style="background: yellow; padding: 10px; border-radius: 8px;">Detail panie</a>
+                </div>
+                
             </div>
-            <div class="produits" style="display: flex; justify-content: space-between; margin: 20px 10px;">
-                <h4>Total : </h4>
-                <h4 id="prixTotal">0 $</h4>
-            </div>
-            <div class="detail-panie" style="text-align: right; margin-top: 20px;">
-                <a href="panier.html" style="background: yellow; padding: 10px; border-radius: 8px;">Detail panie</a>
-            </div>
-            
-        </div>
-        <div id="produitCount">0</div>
-        <img class="labemM menu" src="images/2099043.png" style="width: 30px; z-index: 10000;" id="imageMenu" alt="menu" onclick="afichageMenu()"> 
+            <div id="produitCount">0</div>
+            <img class="labemM menu" src="images/2099043.png" style="width: 30px; z-index: 10000;" id="imageMenu" alt="menu" onclick="afichageMenu()"> 
         </div>
     </header>
         <hr>
@@ -72,8 +72,8 @@
             
             <div class="image_ads">
                 <div class="btn-prNx">
-                    <button id="previews" class="btnNextPrev"><<</button>  
-                    <button id="next" class="btnNextPrev">>></button>
+                    <button id="previews" class="btnNextPrev" ><<</button>  
+                    <button id="next" class="btnNextPrev" onclick="sliderImagesHomeNex()">>></button>
                 </div>
                 <div class="images" id="images-group" >
                     <img id="imageHomeSlide" src="images/women.png" alt="image">
