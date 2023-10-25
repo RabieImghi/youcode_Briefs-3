@@ -54,11 +54,9 @@ function addPanie(indice, prx,nbPrd){
                 panie[i].qte=++panie[i].qte;
                 localStorage.setItem('panie', JSON.stringify(panie));
                 test=1;
-                
                 break;
-            }else{
-                test=0;
-            }
+            }else test=0;
+
         }
     if(!test) panie.push({ indice, prx,nbPrd,qte});
     localStorage.setItem('panie', JSON.stringify(panie));
