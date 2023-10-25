@@ -915,19 +915,33 @@ border-radius: 6px;
             }
             100%{
                 top: -120;
-                width: 300px;
+                width: 290px;
             }
         }
+        #panie .moin{
+            width: 26px;
+            height: 24px;
+        }
         #cart-panie{
-            width: 300px;
+            width: 290px;
             animation:  animateCart2 0.5s;
+        }
+        .product_payment button{
+            width: 88%;
+        }
+        footer nav ul{
+            margin: 0 20px;
         }
     }
     @media screen and (max-width:430px) {
         .btnNextPrev{
             font-size: large;
-            width: 20px;
-            height: 30px;
+            
+            width: 30px !important;
+            height: 30px  !important;
+        }
+        #previews{
+            margin-left: 10px !important;
         }
     }
     #Home_vue nav {
@@ -1125,7 +1139,7 @@ border-radius: 6px;
     }
     #Home_vue nav{
         padding: 10px;
-        width: 70%;
+        width: 90%;
         min-height: 80%;
         box-shadow: 1px 1px 10px lightgray;
         margin-top: 40px;

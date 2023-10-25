@@ -151,7 +151,7 @@ function delet(indice){
     panie.splice(indice, 1);
     localStorage.setItem('panie', JSON.stringify(panie));
     updateAffichagePanie();
-    aff();
+    affichageProduitPanie();
 }
 function affichageProduitPanie(){
     var listProduit = document.getElementById('productlist');
@@ -168,7 +168,7 @@ function affichageProduitPanie(){
             produits+="<div class='produit_selected'><div class='prd_image'>";
             produits+=" <label class='filter_check'  style='margin: 20px 0; margin-left: 10px;'>";
             produits+="<input type='checkbox'> <span class='virify'></span></label> ";
-            produits+="<img src='images/Clavie.png' alt='clavie'>";
+            produits+="<img src='images/phone.jpg' alt='clavie'>";
             produits+="<span>Produit "+item.indice+" <br> <p>Produit </p> <h3>$ "+item.prx+"</h3><span>Shipping : $15 </span> </span> </div>";
             produits+="<div class='sup_plus'> <div class='h_d'> <img src='images/heart.png' alt='heart'> <img src='images/delet.png' onclick='delet("+i+")' alt='delet'></div>";
             produits+="<div class='add_cart_counyt'> <div class='moin' onclick='poinPanie("+i+","+item.prx+")'>-</div>";
